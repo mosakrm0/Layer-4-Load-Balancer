@@ -38,7 +38,7 @@ Used Unix Socket Programming with C language to open socket, listen  to connecti
         perror("Listen failed"); exit(EXIT_FAILURE);
     }
 
-    printf("Load Balancer is listening CONCURRENTLY on port %d...\n", PORT);
+    printf("Load Balancer is listening on port %d...\n", PORT);
 ```
 
 
