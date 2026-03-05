@@ -2,7 +2,7 @@
 # Layer 4 TCP Load Balancer
 
 ## To begin With
-Used Unix Socket Programming with C language to open socket, listen  to connections, bind and fork, look at LoadBalancer.c if you want intrested in the coding area but here is a brief
+Used Unix Socket Programming with C language to open socket, listen  to connections, bind and fork, look at LoadBalancer.c if you are intrested in the coding area but here is a brief:
 ```c
 // Used libraries:
 #include <stdio.h>
@@ -13,13 +13,15 @@ Used Unix Socket Programming with C language to open socket, listen  to connecti
 #include <signal.h>
 ```
 ```c
-// Signal used to improve the i/o 
+// Signal used to prevent zombie proccess
     signal(SIGCHLD, SIG_IGN);
 
+//Creating the socket
     if ((server_fd = socket(AF_INET, SOCK_STREAM, 0)) == 0) {
         perror("Socket failed"); exit(EXIT_FAILURE);
     }
 
+//Allowing port reuse to avoid "Address already in use" errors
     int opt = 1;
     if (setsockopt(server_fd, SOL_SOCKET, SO_REUSEADDR, &opt, sizeof(opt))) {
         perror("setsockopt failed"); exit(EXIT_FAILURE);
