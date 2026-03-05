@@ -84,7 +84,11 @@ docker compose up -d
 ## Testing
 
 ```bash
-curl http://localhost:8080
+curl http://localhost:8080 
+```
+or
+```bash
+nc 127.0.0.1 8080
 ```
 
 <img width="942" height="437" alt="image" src="https://github.com/user-attachments/assets/0d36372d-681c-4e93-a58f-ed4c41fbe44c" />
